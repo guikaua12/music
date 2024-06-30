@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 import './globals.css';
 import { Container, RightSide } from './layout.styles';
 import Sidebar from '@/components/Sidebar/Sidebar';
 import ThemeProvider from '@/providers/ThemeProvider';
 import Header from '@/components/Header/Header';
 
-const inter = Inter({ subsets: ['latin'] });
+const poppins = Poppins({ subsets: ['latin'], weight: ['100', '300', '400', '500', '600', '700'] });
 
 export const metadata: Metadata = {
     title: 'Music',
@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="pt-br">
-            <body className={inter.className}>
+            <body className={poppins.className}>
                 <ThemeProvider>
                     <Container>
                         <Sidebar />
