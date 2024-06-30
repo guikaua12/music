@@ -17,7 +17,7 @@ export const SearchInput = styled.input`
     border: 0;
     padding: 0 1rem;
     color: #8c8c8c;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
 
     &::placeholder {
         color: #666666;
@@ -29,7 +29,7 @@ export const SearchButton = styled.button`
     border: 0;
     outline: 0;
     color: #bfbfbf;
-    padding: 0.25rem 0.5rem;
+    padding: 0.25rem 0.75rem;
     cursor: pointer;
 
     &:hover {
