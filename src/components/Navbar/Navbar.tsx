@@ -10,8 +10,9 @@ const Navbar = () => {
 
     return (
         <Nav>
-            <NavbarRoute icon={<PiHouseFill size={16} color={neutral5} />} href="/">
-                Home
+            <NavbarRoute href="/">
+                <PiHouseFill size={18} color={neutral5} />
+                <span>Home</span>
             </NavbarRoute>
         </Nav>
     );

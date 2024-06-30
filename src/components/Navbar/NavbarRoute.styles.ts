@@ -7,6 +7,7 @@ export const NavRoute = styled(Link)`
     color: ${(props) => props.theme.neutral5};
     display: flex;
     align-items: center;
+    font-size: 18px;
     gap: 1rem;
     text-decoration: none;
 
