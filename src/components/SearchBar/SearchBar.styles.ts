@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
     display: flex;
     justify-content: space-between;
-    background-color: #1a1a1a;
+    background-color: #191919;
     max-width: 500px;
     width: 100%;
     border-radius: 0.75rem;
@@ -20,7 +20,7 @@ export const SearchInput = styled.input`
     font-size: 0.75rem;
 
     &::placeholder {
-        color: #8c8c8c;
+        color: #666666;
     }
 `;
 
