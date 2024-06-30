@@ -31,4 +31,8 @@ export const SearchButton = styled.button`
     color: #bfbfbf;
     padding: 0.25rem 0.5rem;
     cursor: pointer;
+
+    &:hover {
+        color: #808080;
+    }
 `;
