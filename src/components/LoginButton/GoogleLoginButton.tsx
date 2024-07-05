@@ -2,7 +2,14 @@ import { env } from '@/env/env';
 import Image from 'next/image';
 import { StyledButton } from './GoogleLoginButton.styles';
 
-const popupCenter = ({ url, title, w, h }) => {
+type PopupCenterProps = {
+    url: string;
+    title: string;
+    w: number;
+    h: number;
+};
+
+const popupCenter = ({ url, title, w, h }: PopupCenterProps) => {
     const dualScreenLeft = window.screenLeft !== undefined ? window.screenLeft : window.screenX;
     const dualScreenTop = window.screenTop !== undefined ? window.screenTop : window.screenY;
 
