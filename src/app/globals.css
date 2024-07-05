@@ -5,7 +5,8 @@
     transition: all 50ms;
 }
 
-html, body {
+html,
+body {
     min-height: 100vh;
 }
 
