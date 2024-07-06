@@ -1,12 +1,13 @@
 'use client';
 
 import React from 'react';
-import { Container, HeaderWrapper } from '@/components/Header/Header.styles';
+import { Container, HeaderWrapper, LoggedContainer } from '@/components/Header/Header.styles';
 import Button from '@/components/Button/Button';
 import { PiCloudArrowUpBold } from 'react-icons/pi';
 import SearchBar from '@/components/SearchBar/SearchBar';
 import { useAuth } from '@/hooks/useAuth';
 import GoogleLoginButton from '../LoginButton/GoogleLoginButton';
+import UserProfilePopover from '../UserProfilePopover/UserProfilePopover';
 
 const Header = () => {
     const { userQuery } = useAuth();
@@ -16,12 +17,12 @@ const Header = () => {
             <Container>
                 <SearchBar>Procure por uma música</SearchBar>
                 {userQuery.data ? (
-                    <div>
+                    <LoggedContainer>
                         <Button>
                             <PiCloudArrowUpBold size={20} color="white" />
                         </Button>
-                        <div>{userQuery.data.name}</div>
-                    </div>
+                        <UserProfilePopover user={userQuery.data} />
+                    </LoggedContainer>
                 ) : (
                     <GoogleLoginButton />
                 )}

@@ -11,3 +11,8 @@ export const Container = styled.div`
     justify-content: space-between;
     margin: 0 auto;
 `;
+
+export const LoggedContainer = styled.div`
+    display: flex;
+    gap: 1rem;
+`;
