@@ -15,7 +15,7 @@ export const SearchInput = styled.input`
     background-color: transparent;
     outline: none;
     border: 0;
-    padding: 0.25rem 1rem;
+    padding: 0.5rem 1rem;
     color: #8c8c8c;
     font-size: 0.8rem;
 
@@ -25,6 +25,8 @@ export const SearchInput = styled.input`
 `;
 
 export const SearchButton = styled.button`
+    display: flex;
+    align-items: center;
     background-color: transparent;
     border: 0;
     outline: 0;
