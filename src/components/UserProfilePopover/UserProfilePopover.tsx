@@ -1,16 +1,16 @@
-import React from 'react';
-import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
 import { User } from '@/types/User';
-import { StyledButton, StyledPanel, UserImage, Username } from './UserProfilePopover.styles';
-import Image from 'next/image';
-import Link from 'next/link';
+import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
+import { MenuButton, MenuLink, StyledButton, StyledMenu, UserImage, Username } from './UserProfilePopover.styles';
+import { RiAlbumLine } from 'react-icons/ri';
+import { MdLogout } from 'react-icons/md';
+import { useAuth } from '@/hooks/useAuth';
 
 type UserProfileButtonProps = {
     user: User;
 };
 
 const UserProfilePopover = ({ user }: UserProfileButtonProps) => {
-    // console.log(user);
+    const { logout } = useAuth();
 
     return (
         <Popover className="relative">
@@ -23,8 +23,15 @@ const UserProfilePopover = ({ user }: UserProfileButtonProps) => {
                 />
                 <Username>{user.name}</Username>
             </PopoverButton>
-            <PopoverPanel anchor="bottom" as={StyledPanel}>
-                <Link href="/user/albums"></Link>
+            <PopoverPanel anchor="bottom" as={StyledMenu}>
+                <MenuLink href="/user/albums">
+                    <RiAlbumLine size={20} />
+                    Seus albums
+                </MenuLink>
+                <MenuButton onClick={logout}>
+                    <MdLogout size={20} />
+                    Sair
+                </MenuButton>
             </PopoverPanel>
         </Popover>
     );
