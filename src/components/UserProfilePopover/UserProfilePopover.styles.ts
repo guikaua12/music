@@ -34,6 +34,7 @@ export const StyledMenu = styled.div`
     display: flex;
     flex-direction: column;
     width: 11rem;
+    margin-top: 0.25rem;
 `;
 
 const menuItemStyle = `
