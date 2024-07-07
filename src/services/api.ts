@@ -1,8 +1,6 @@
 import { env } from '@/env/env';
 import axios, { isAxiosError } from 'axios';
-import { getCookie, deleteCookie } from 'cookies-next';
-
-const TOKEN_KEY = 'music_token';
+import { deleteToken, getToken } from './token-service';
 
 export const api = axios.create({
     baseURL: env.API_ENDPOINT,
@@ -13,7 +11,7 @@ api.defaults.headers.common = {
 };
 
 api.interceptors.request.use((config) => {
-    const token = getCookie(TOKEN_KEY);
+    const token = getToken();
 
     if (token) {
         config.headers.authorization = `Bearer ${token}`;
@@ -26,7 +24,7 @@ api.interceptors.response.use(
     (config) => config,
     (error) => {
         if (isAxiosError(error.response.status) && error.response.status === 401) {
-            deleteCookie(TOKEN_KEY);
+            deleteToken();
             window.location.reload();
         }
 
