@@ -9,7 +9,7 @@ const SearchBar = ({ children, ...props }: Props) => {
         <Container>
             <SearchInput placeholder={children as string}></SearchInput>
             <SearchButton>
-                <PiMagnifyingGlassBold size={20} />
+                <PiMagnifyingGlassBold size={18} />
             </SearchButton>
         </Container>
     );
